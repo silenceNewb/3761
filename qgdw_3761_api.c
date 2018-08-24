@@ -32468,7 +32468,8 @@ eMtErr emtTrans_rec_27(eMtTrans eTrans, void* psUser, void* psFrame, UINT16* pus
             DEBUG("emtTrans_rec_27() emt_trans_YYMMDDhhmm error code = %d", eRet);
             #endif
             return eRet;
-        }
+        }
+
         
         // Pn
         usPn = psF->usPnFlag & 0xFFF;
@@ -34972,7 +34973,7 @@ eMtErr emt_trans_ctrl(eMtTrans eTrans, sMtCtrl* puCtrl, UINT8* pfCtrl)
         { 
             //下行报文 
             (puCtrl->bFcv     == TRUE) ? (ucfCtrl |= 0x10) : (ucfCtrl &= 0xEF);
-            (puCtrl->bAcd_Fcb == TRUE) ? (ucfCtrl |= 0x10) : (ucfCtrl &= 0xEF);
+            (puCtrl->bAcd_Fcb == TRUE) ? (ucfCtrl |= 0x20) : (ucfCtrl &= 0xDF);
         }
         else
         {
